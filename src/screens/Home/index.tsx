@@ -7,10 +7,9 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Logo from "../../assets/logo.svg";
 import { Car } from "../../components/Car";
 
-import { Container, Header, HeaderContent, TotalCars } from "./styles";
+import { Container, Header, HeaderContent, TotalCars, CarList } from "./styles";
 
 export function Home() {
-
   const carDataOne = {
     brand: "Audi",
     name: "RS 5 Coupé",
@@ -20,17 +19,6 @@ export function Home() {
     },
     thumbnail:
       "https://cdn.sitewebmotors.com.br/uploads/userGallery/5fcfe53240728.png",
-  };
-
-  const carDataTwo = {
-    brand: "Porsche",
-    name: "Panamera",
-    rent: {
-      period: "ao dia",
-      price: 340,
-    },
-    thumbnail:
-      "https://www.mazettoseguros.com.br/blog/wp-content/uploads/2019/10/seguro-panamera-corretora-de-seguros-700x350.png",
   };
 
   return (
@@ -46,8 +34,11 @@ export function Home() {
           <TotalCars>Total de 12 carros</TotalCars>
         </HeaderContent>
       </Header>
-      <Car data={carDataOne} />
-      <Car data={carDataTwo} />
+      <CarList
+        data={[1, 2, 3, 4, 5, 6, 7]}
+        keyExtractor={(item) => String(item)}
+        renderItem={({ item }) => <Car data={carDataOne} />}
+      />
     </Container>
   );
 }
