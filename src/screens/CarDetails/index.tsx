@@ -3,6 +3,7 @@ import React from "react";
 import { BackButton } from "../../components/BackButton";
 import { ImageSlider } from "../../components/ImageSlider";
 import { Accessory } from "../../components/Accessory";
+import { Button } from "../../components/Button";
 
 import speedSvg from "../../assets/speed.svg";
 import accelerationSvg from "../../assets/acceleration.svg";
@@ -25,6 +26,7 @@ import {
   Price,
   About,
   Acessories,
+  Footer
 } from "./styles";
 
 export function CarDetails() {
@@ -65,7 +67,22 @@ export function CarDetails() {
           ultrices. Nulla dignissim rhoncus porttitor. Nulla in pharetra enim.
           Nulla a volutpat massa.
         </About>
+        <About>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor
+          at risus sed accumsan. Aliquam scelerisque risus in nisi aliquet
+          ultrices. Nulla dignissim rhoncus porttitor. Nulla in pharetra enim.
+          Nulla a volutpat massa.
+        </About>
+        <About>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor
+          at risus sed accumsan. Aliquam scelerisque risus in nisi aliquet
+          ultrices. Nulla dignissim rhoncus porttitor. Nulla in pharetra enim.
+          Nulla a volutpat massa.
+        </About>
       </Content>
+      <Footer>
+        <Button title="Confirmar"/>
+      </Footer>
     </Container>
   );
 }
