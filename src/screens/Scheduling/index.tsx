@@ -1,4 +1,6 @@
 import React from "react";
+import { StatusBar } from "react-native";
+
 import { BackButton } from "../../components/BackButton";
 
 import { useTheme } from "styled-components";
@@ -11,9 +13,12 @@ import {
   DateInfo,
   DateTitle,
   DateValue,
+  Content,
+  Footer,
 } from "./styles";
 
 import ArrowSvg from "../../assets/arrow.svg";
+import { Button } from "../../components/Button";
 
 export function Scheduling() {
   const theme = useTheme();
@@ -21,6 +26,11 @@ export function Scheduling() {
   return (
     <Container>
       <Header>
+        <StatusBar
+          barStyle="light-content"
+          translucent
+          backgroundColor="transparent"
+        />
         <BackButton onPress={() => {}} color={theme.colors.shape} />
         <Title>
           Escolha uma {"\n"}
@@ -30,15 +40,20 @@ export function Scheduling() {
         <RentalPeriod>
           <DateInfo>
             <DateTitle>De</DateTitle>
-            <DateValue />
+            <DateValue selected={false}>18/02/2021</DateValue>
           </DateInfo>
           <ArrowSvg />
           <DateInfo>
             <DateTitle>Até</DateTitle>
-            <DateValue />
+            <DateValue selected={false}>18/02/2021</DateValue>
           </DateInfo>
         </RentalPeriod>
       </Header>
+      <Content>
+        <Footer>
+          <Button title="Confirmar" />
+        </Footer>
+      </Content>
     </Container>
   );
 }
