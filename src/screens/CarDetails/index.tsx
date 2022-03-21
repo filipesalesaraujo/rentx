@@ -32,6 +32,15 @@ interface Params {
   car: CarDTO;
 }
 
+interface NavigationProps {
+  navigate: (
+    screen: string,
+    carObject: {
+      car: CarDTO;
+    }
+  ) => void;
+}
+
 export function CarDetails() {
   const navigation = useNavigation();
 
@@ -40,7 +49,7 @@ export function CarDetails() {
   const { car } = route.params as Params;
 
   function handleConfirmRental() {
-    navigation.navigate("Scheduling");
+    navigation.navigate("Scheduling", { car });
   }
 
   function handleBack() {
