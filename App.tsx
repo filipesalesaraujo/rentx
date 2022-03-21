@@ -41,4 +41,4 @@ export default function App() {
   );
 }
 
-// $ json-server ./src/services/server.json --host 192.168.0.5 --port 3333
+// $ json-server ./src/services/server.json --host 192.168.0.5 --port 3333 --delay 700
