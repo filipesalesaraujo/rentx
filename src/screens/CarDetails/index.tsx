@@ -48,8 +48,7 @@ interface NavigationProps {
 }
 
 export function CarDetails() {
-
-  const theme = useTheme()
+  const theme = useTheme();
 
   const navigation = useNavigation();
 
@@ -96,16 +95,22 @@ export function CarDetails() {
         backgroundColor="transparent"
       />
 
-      <Animated.View style={[headerStyleAnimation, styles.header, {backgroundColor: theme.colors.background_secondary}]}>
+      <Animated.View
+        style={[
+          headerStyleAnimation,
+          styles.header,
+          { backgroundColor: theme.colors.background_secondary },
+        ]}
+      >
         <Header>
           <BackButton onPress={handleBack} />
         </Header>
 
-          <CarImages>
-        <Animated.View style={sliderCarsStyleAnimation}>
+        <CarImages>
+          <Animated.View style={sliderCarsStyleAnimation}>
             <ImageSlider imagesUrl={car.photos} />
-        </Animated.View>
-          </CarImages>
+          </Animated.View>
+        </CarImages>
       </Animated.View>
 
       <Animated.ScrollView
@@ -136,13 +141,7 @@ export function CarDetails() {
             />
           ))}
         </Accessories>
-        <About>
-          {car.about}
-          {car.about}
-          {car.about}
-          {car.about}
-          {car.about}
-        </About>
+        <About>{car.about}</About>
       </Animated.ScrollView>
       <Footer>
         <Button

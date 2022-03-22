@@ -16,7 +16,7 @@ const ButtonAnimated = Animated.createAnimatedComponent(RectButton);
 
 import Logo from "../../assets/logo.svg";
 import { Car } from "../../components/Car";
-import { Load } from "../../components/Load";
+import { LoadAnimation } from "../../components/LoadAnimation";
 import { Container, Header, HeaderContent, TotalCars, CarList } from "./styles";
 import { api } from "../../services/api";
 import { CarDTO } from "../../dtos/CarDTO";
@@ -106,7 +106,7 @@ export function Home() {
         </HeaderContent>
       </Header>
       {loading ? (
-        <Load />
+        <LoadAnimation />
       ) : (
         <CarList
           data={cars}
