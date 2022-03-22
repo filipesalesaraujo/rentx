@@ -61,7 +61,6 @@ export function CarDetails() {
 
   const scrollHandler = useAnimatedScrollHandler((event) => {
     scrollY.value = event.contentOffset.y;
-    console.log(event.contentOffset.y);
   });
 
   const headerStyleAnimation = useAnimatedStyle(() => {
@@ -102,11 +101,11 @@ export function CarDetails() {
           <BackButton onPress={handleBack} />
         </Header>
 
-        <Animated.View style={sliderCarsStyleAnimation}>
           <CarImages>
+        <Animated.View style={sliderCarsStyleAnimation}>
             <ImageSlider imagesUrl={car.photos} />
-          </CarImages>
         </Animated.View>
+          </CarImages>
       </Animated.View>
 
       <Animated.ScrollView
