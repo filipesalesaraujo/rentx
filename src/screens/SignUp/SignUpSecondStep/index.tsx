@@ -12,6 +12,7 @@ import { BackButton } from "../../../components/BackButton";
 import { Bullet } from "../../../components/Bullet";
 import { PasswordInput } from "../../../components/PasswordInput";
 import { Button } from "../../../components/Button";
+import { Confirmation } from "../../../screens/Confirmation";
 
 import {
   Container,
@@ -49,6 +50,11 @@ export function SignUpSecondStep() {
     if (password != passwordConfirm) {
       return Alert.alert("As senhas não são iguais");
     }
+    navigation.navigate<any>("Confirmation", {
+      title: "Conta criada",
+      message: `Agora é só fazer login\ne aproveitar`,
+      nextScreenRoute: "SignIn",
+    });
   }
   return (
     <KeyboardAvoidingView behavior="position" enabled>
