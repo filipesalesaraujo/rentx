@@ -4,7 +4,6 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex-direction: row;
-  margin-bottom: 8px;
 `;
 
 export const IconContainer = styled.View`
@@ -24,3 +23,4 @@ export const InputText = styled(TextInput)`
   font-size: ${RFValue(15)}px;
   padding: 0 23px;
 `;
+
