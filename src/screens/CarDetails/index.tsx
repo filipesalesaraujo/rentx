@@ -80,7 +80,7 @@ export function CarDetails() {
   });
 
   function handleConfirmRental() {
-    navigation.navigate("Scheduling", { car });
+    navigation.navigate<any>("Scheduling", { car });
   }
 
   function handleBack() {
@@ -128,8 +128,8 @@ export function CarDetails() {
             <Name>{car.name}</Name>
           </Description>
           <Rent>
-            <Period>{car.rent.period}</Period>
-            <Price>R$ {car.rent.price}</Price>
+            <Period>{car.period}</Period>
+            <Price>R$ {car.price}</Price>
           </Rent>
         </Details>
         <Accessories>
