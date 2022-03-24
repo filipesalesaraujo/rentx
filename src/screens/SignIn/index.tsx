@@ -3,8 +3,8 @@ import { StatusBar } from "react-native";
 import theme from "../../styles/theme";
 
 import { Button } from "../../components/Button";
-import { Container, Header, Title, SubTitle, Footer,Form } from "./styles";
 import { Input } from "../../components/Input";
+import { Container, Header, Title, SubTitle, Footer, Form } from "./styles";
 
 export function SignIn() {
   return (
@@ -22,7 +22,13 @@ export function SignIn() {
       </Header>
 
       <Form>
-        <Input iconName="mail"/>
+        <Input
+          iconName="mail"
+          placeholder="E-mail"
+          keyboardType="email-address"
+          autoCorrect={false}
+          autoCapitalize="none"
+        />
       </Form>
 
       <Footer>
