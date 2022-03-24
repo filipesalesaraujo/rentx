@@ -6,11 +6,12 @@ import { useTheme } from "styled-components";
 
 import { Container, Title } from "./styles";
 
-interface Props {
+import { RectButtonProps } from "react-native-gesture-handler";
+
+interface Props extends RectButtonProps {
   title: string;
   color?: string;
-  onPress: () => void;
-  enabled?: boolean;
+
   loading?: boolean;
   light?: boolean;
 }
