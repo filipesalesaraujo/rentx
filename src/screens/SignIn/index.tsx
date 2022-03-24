@@ -10,6 +10,7 @@ import * as Yup from "yup";
 import { useNavigation } from "@react-navigation/native";
 
 import theme from "../../styles/theme";
+import { useAuth } from "../../hooks/auth";
 
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -19,6 +20,9 @@ import { Container, Header, Title, SubTitle, Footer, Form } from "./styles";
 export function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { signIn } = useAuth();
+
   const navigation = useNavigation();
 
   async function handleSignIn() {
@@ -31,13 +35,14 @@ export function SignIn() {
       });
 
       await schema.validate({ email, password });
-      Alert.alert("td certo");
+
+      signIn({ email, password });
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
-        Alert.alert("validacao", error.message);
+        Alert.alert("Ops...", error.message);
       } else {
         Alert.alert(
-          "error na autenticacao",
+          "Ops..",
           "Ocorreu um erro ao fazer login, verifique as credenciais"
         );
       }
@@ -45,7 +50,7 @@ export function SignIn() {
   }
 
   function handleNewAccount() {
-    navigation.navigate("SignUpFirstStep");
+    navigation.navigate<any>("SignUpFirstStep");
   }
 
   return (
