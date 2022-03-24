@@ -7,6 +7,7 @@ import {
   Alert,
 } from "react-native";
 import * as Yup from "yup";
+import { useNavigation } from "@react-navigation/native";
 
 import theme from "../../styles/theme";
 
@@ -18,6 +19,7 @@ import { Container, Header, Title, SubTitle, Footer, Form } from "./styles";
 export function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigation = useNavigation();
 
   async function handleSignIn() {
     try {
@@ -41,6 +43,11 @@ export function SignIn() {
       }
     }
   }
+
+  function handleNewAccount() {
+    navigation.navigate("SignUpFirstStep");
+  }
+
   return (
     <KeyboardAvoidingView behavior="position" enabled>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -84,8 +91,8 @@ export function SignIn() {
             />
             <Button
               title="Criar conta gratuita"
-              onPress={() => {}}
-              enabled={false}
+              onPress={handleNewAccount}
+              enabled={true}
               loading={false}
               color={theme.colors.background_secondary}
               light
